@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: springdb
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  data.mongodb:
+    host: mongodb
+    port: 27017
+    database: springdb
+    
+    
+---  
+spring:
+  jwt:
+    secret: abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    expiration: 3600000 # 1h
+  data:
+    mongodb:
+      auto-index-creation: true
